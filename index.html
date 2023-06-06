@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Traffic Lights</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='traffic.css'>
+    <script src='traffic.js'></script>
+</head>
+<body>
+    
+    <main>
+        <section class="frame">
+        <div class="light" id="red"></div>
+        <aside class="light" id="countdown"><h1 id="t">30</h1></aside>
+        <div class="light" id="green"></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        var countdownElement = document.getElementById('countdown');
+        var countdown = 30;
+        var countdownTimer;
+    
+        function startCountdown() {
+          countdownTimer = setInterval(updateCountdown, 1000);
+        }
+    
+        function updateCountdown() {
+          countdown--;
+          countdownElement.textContent = countdown;
+          document.getElementById("countdown").style.fontSize = "30px";    
+          if (countdown === 0) {
+            clearInterval(countdownTimer);
+            countdown = 30;
+            setTimeout(startCountdown);
+                        
+          }
+        }
+        startCountdown();
+      </script>
+      <script>
+        function switchLights() {
+            var redLight = document.getElementById("red");
+            var greenLight = document.getElementById("green");
+
+            setTimeout(function() {
+                redLight.style.backgroundColor = "red";
+                greenLight.style.backgroundColor = "gray";
+            }, 0);
+
+            setTimeout(function() {
+                redLight.style.backgroundColor = "gray";
+                greenLight.style.backgroundColor = "green";
+            }, 30000);
+
+            setTimeout(switchLights, 60000);
+        }
+
+        switchLights();
+      </script>
+      
+</body>
+</html>
