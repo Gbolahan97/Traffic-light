@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    position: absolute;
+    top: 30%;
+    left: 43%;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    border: 5px solid grey;
+    border-radius: 45%;
+    background-color: black;
+}
+.light{
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: red;
+    margin: 5px;
+}
+.light:nth-child(2){
+    background-color: white;
+}
+.light:nth-child(3){
+    background-color: green;
+}
+h1{
+    font-size: 30px;
+}
